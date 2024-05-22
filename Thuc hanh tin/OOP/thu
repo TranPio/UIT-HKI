@@ -1,0 +1,95 @@
+#include <iostream>
+using namespace std;
+
+class IntArr {
+private:
+    int count;
+    int * values;
+public:
+    // constructor mặc định
+    IntArr(){
+        count = 0;
+        values = NULL;
+    }
+    // constructor với số lượng phần tử và giá trị mặc định
+    IntArr(int n, int val){
+        count = n;
+        values = new int[count];
+        for (int i = 0; i <; i++){
+            values[i] = val;
+        }
+    }
+    // constructor với số lượng phần tử mặc định là 0
+    IntArr(int n){
+        count = n;
+        values = new int[count];
+        for (int i = 0; i <; i++){
+            values[i] = 0;
+        }
+    }
+    // hàm nối IntArr
+    IntArr concat(IntArr arr){
+        int n = count + arr.count;
+        int * newvalues = new int[n];
+        for (int i = 0; i < count; i++){
+            newvalues[i] = values[i];
+        }
+        for (int i = 0; i <.count; i++){
+            newvalues[i + count] = arr.values[i];
+        }
+        IntArr newarr(n);
+        newarr.values = newvalues;
+        return newarr;
+    }
+    // hàm thêm giá trị vào cuối danh sách
+    void push(int val){
+        int * newvalues = new int[count + 1];
+        for (int i = 0; i < count; i++){
+            newvalues[i] = values[i];
+        }
+        newvalues[count] = val;
+        count++;
+        values = newvalues;
+    }
+    // hàm huỷ các vùng nhớ được cấp phát khi sử dụng xong
+    ~IntArr(){
+        delete[] values;
+    }
+    // hàm nhập IntArr
+    friend istream& operator>>(istream& input, IntArr& arr){
+        int n;
+        cout <<Nhap vao so phan tu: ";
+        input >> n;
+        if (arr.values != NULL){
+            delete[] arr.values;
+        }
+        arr.count = n;
+        arr.values = new int[arr.count];
+        for (int i = 0; i < arr.count; i++){
+            cout <<Nhap vao phan tu thu " << + 1 << ";
+            input >> arr.values[i];
+        }
+        return input;
+    }
+    // hàm xuất IntArr
+    friend ostream& operator<<(ostream output, const IntArr& arr){
+        for (int i = 0; i <.count; i++){
+            output <<.values[i];
+            if (i != arr.count - 1){
+                output << ", ";
+            }
+        }
+        return output;
+    }
+};
+
+int main() {
+    IntArr l1; // tạo mảng không chứa bất kì phần tử nào
+    IntArr l2(3, 2); // tạo một mảng với 3 phần tử, tất cả phần tử đều có giá trị là 2
+    IntArr l3(2); // tạo một mảng với 2 phần tử, tất cả phần tử đều có giá trị là 0
+    IntArr l4 = l2.concat(l3); // tạo ra m IntArr mới có nội dung là kết quả của việc nối các phần tử l3 vào cuối các phần tử của l2 theo thứ tự
+    l2.push(3); // thêm số 3 vào cuối danh sách trong đối tượng l2
+    cin >> l2; // xoá các giá trị hiện có trong l2 và cho phép người dùng nhập số lượng phần tử mới và giá trị các phần tử mới vào l2
+    cout << l2; // in ra các số nguyên có trong danh sách
+    return 0;
+}

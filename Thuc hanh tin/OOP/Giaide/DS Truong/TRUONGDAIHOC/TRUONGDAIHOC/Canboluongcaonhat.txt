@@ -1,0 +1,5 @@
+
+ Ten can bo la: 5
+Khoa cua giang vien la: 5
+Trinh do cua giang vien la: Cu nhan
+So tiet day la: 5

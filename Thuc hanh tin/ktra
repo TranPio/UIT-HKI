@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace stdl;
+int n,P=1,S=0;
+int tongS(int n){
+	for(int i=1;i<=n;i++)
+	P=P*i;
+	S=S+P;
+	cout<<S;
+//	return S;
+}
+int main(){
+	cin>>n;
+	tongS(n);
+	return 0;
+}

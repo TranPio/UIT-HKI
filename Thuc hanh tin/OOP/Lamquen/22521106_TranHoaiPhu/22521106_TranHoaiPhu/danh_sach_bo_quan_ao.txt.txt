@@ -1,0 +1,5 @@
+
+	 Thong tin bo quan ao thu 1: 
+ Bo quan ao: PHU Bo hoang hon Nam Size S 143000
+ Ao: PHU  Ao so mi Nam Size S Trang 40000 loai 1 
+ Quan: Phu  Quan tay Nam Size S Xanh 40000 loai 2 Phu Vong tay xanh 30000 4

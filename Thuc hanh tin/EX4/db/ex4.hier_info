@@ -1,0 +1,265 @@
+|cau2
+F3 <= mux24bit:inst5.F[3]
+a3 => ss24bit:inst.a[3]
+a3 => mux24bit:inst1.A[3]
+a2 => ss24bit:inst.a[2]
+a2 => mux24bit:inst1.A[2]
+a1 => ss24bit:inst.a[1]
+a1 => mux24bit:inst1.A[1]
+a0 => ss24bit:inst.a[0]
+a0 => mux24bit:inst1.A[0]
+b3 => ss24bit:inst.b[3]
+b3 => mux24bit:inst1.B[3]
+b2 => ss24bit:inst.b[2]
+b2 => mux24bit:inst1.B[2]
+b1 => ss24bit:inst.b[1]
+b1 => mux24bit:inst1.B[1]
+b0 => ss24bit:inst.b[0]
+b0 => mux24bit:inst1.B[0]
+c3 => ss24bit:inst4.b[3]
+c3 => mux24bit:inst5.B[3]
+c2 => ss24bit:inst4.b[2]
+c2 => mux24bit:inst5.B[2]
+c1 => ss24bit:inst4.b[1]
+c1 => mux24bit:inst5.B[1]
+c0 => ss24bit:inst4.b[0]
+c0 => mux24bit:inst5.B[0]
+F2 <= mux24bit:inst5.F[2]
+F1 <= mux24bit:inst5.F[1]
+F0 <= mux24bit:inst5.F[0]
+
+
+|cau2|mux24bit:inst5
+F[0] <= MUX21bit:inst3.OUT
+F[1] <= MUX21bit:inst2.OUT
+F[2] <= MUX21bit:inst1.OUT
+F[3] <= MUX21bit:inst.OUT
+S => MUX21bit:inst.S
+S => MUX21bit:inst1.S
+S => MUX21bit:inst2.S
+S => MUX21bit:inst3.S
+A[0] => MUX21bit:inst3.I[0]
+A[1] => MUX21bit:inst2.I[0]
+A[2] => MUX21bit:inst1.I[0]
+A[3] => MUX21bit:inst.I[0]
+B[0] => MUX21bit:inst3.I[1]
+B[1] => MUX21bit:inst2.I[1]
+B[2] => MUX21bit:inst1.I[1]
+B[3] => MUX21bit:inst.I[1]
+
+
+|cau2|mux24bit:inst5|mux21bit:inst
+OUT <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+S => inst1.IN0
+S => inst3.IN0
+I[0] => inst.IN1
+I[1] => inst1.IN1
+
+
+|cau2|mux24bit:inst5|mux21bit:inst1
+OUT <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+S => inst1.IN0
+S => inst3.IN0
+I[0] => inst.IN1
+I[1] => inst1.IN1
+
+
+|cau2|mux24bit:inst5|mux21bit:inst2
+OUT <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+S => inst1.IN0
+S => inst3.IN0
+I[0] => inst.IN1
+I[1] => inst1.IN1
+
+
+|cau2|mux24bit:inst5|mux21bit:inst3
+OUT <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+S => inst1.IN0
+S => inst3.IN0
+I[0] => inst.IN1
+I[1] => inst1.IN1
+
+
+|cau2|ss24bit:inst4
+S <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+a[0] => ss21bit:inst3.a
+a[1] => ss21bit:inst2.a
+a[2] => ss21bit:inst1.a
+a[3] => ss21bit:inst.a
+b[0] => ss21bit:inst3.b
+b[1] => ss21bit:inst2.b
+b[2] => ss21bit:inst1.b
+b[3] => ss21bit:inst.b
+I <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+E <= ss21bit:inst3.E
+
+
+|cau2|ss24bit:inst4|ss21bit:inst
+E <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+a => inst5.IN0
+a => inst.IN0
+b => inst1.IN1
+b => inst4.IN0
+G => inst1.IN2
+G => inst.IN2
+G => inst3.IN1
+S <= inst.DB_MAX_OUTPUT_PORT_TYPE
+I <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cau2|ss24bit:inst4|ss21bit:inst2
+E <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+a => inst5.IN0
+a => inst.IN0
+b => inst1.IN1
+b => inst4.IN0
+G => inst1.IN2
+G => inst.IN2
+G => inst3.IN1
+S <= inst.DB_MAX_OUTPUT_PORT_TYPE
+I <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cau2|ss24bit:inst4|ss21bit:inst1
+E <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+a => inst5.IN0
+a => inst.IN0
+b => inst1.IN1
+b => inst4.IN0
+G => inst1.IN2
+G => inst.IN2
+G => inst3.IN1
+S <= inst.DB_MAX_OUTPUT_PORT_TYPE
+I <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cau2|ss24bit:inst4|ss21bit:inst3
+E <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+a => inst5.IN0
+a => inst.IN0
+b => inst1.IN1
+b => inst4.IN0
+G => inst1.IN2
+G => inst.IN2
+G => inst3.IN1
+S <= inst.DB_MAX_OUTPUT_PORT_TYPE
+I <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cau2|mux24bit:inst1
+F[0] <= MUX21bit:inst3.OUT
+F[1] <= MUX21bit:inst2.OUT
+F[2] <= MUX21bit:inst1.OUT
+F[3] <= MUX21bit:inst.OUT
+S => MUX21bit:inst.S
+S => MUX21bit:inst1.S
+S => MUX21bit:inst2.S
+S => MUX21bit:inst3.S
+A[0] => MUX21bit:inst3.I[0]
+A[1] => MUX21bit:inst2.I[0]
+A[2] => MUX21bit:inst1.I[0]
+A[3] => MUX21bit:inst.I[0]
+B[0] => MUX21bit:inst3.I[1]
+B[1] => MUX21bit:inst2.I[1]
+B[2] => MUX21bit:inst1.I[1]
+B[3] => MUX21bit:inst.I[1]
+
+
+|cau2|mux24bit:inst1|mux21bit:inst
+OUT <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+S => inst1.IN0
+S => inst3.IN0
+I[0] => inst.IN1
+I[1] => inst1.IN1
+
+
+|cau2|mux24bit:inst1|mux21bit:inst1
+OUT <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+S => inst1.IN0
+S => inst3.IN0
+I[0] => inst.IN1
+I[1] => inst1.IN1
+
+
+|cau2|mux24bit:inst1|mux21bit:inst2
+OUT <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+S => inst1.IN0
+S => inst3.IN0
+I[0] => inst.IN1
+I[1] => inst1.IN1
+
+
+|cau2|mux24bit:inst1|mux21bit:inst3
+OUT <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+S => inst1.IN0
+S => inst3.IN0
+I[0] => inst.IN1
+I[1] => inst1.IN1
+
+
+|cau2|ss24bit:inst
+S <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+a[0] => ss21bit:inst3.a
+a[1] => ss21bit:inst2.a
+a[2] => ss21bit:inst1.a
+a[3] => ss21bit:inst.a
+b[0] => ss21bit:inst3.b
+b[1] => ss21bit:inst2.b
+b[2] => ss21bit:inst1.b
+b[3] => ss21bit:inst.b
+I <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+E <= ss21bit:inst3.E
+
+
+|cau2|ss24bit:inst|ss21bit:inst
+E <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+a => inst5.IN0
+a => inst.IN0
+b => inst1.IN1
+b => inst4.IN0
+G => inst1.IN2
+G => inst.IN2
+G => inst3.IN1
+S <= inst.DB_MAX_OUTPUT_PORT_TYPE
+I <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cau2|ss24bit:inst|ss21bit:inst2
+E <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+a => inst5.IN0
+a => inst.IN0
+b => inst1.IN1
+b => inst4.IN0
+G => inst1.IN2
+G => inst.IN2
+G => inst3.IN1
+S <= inst.DB_MAX_OUTPUT_PORT_TYPE
+I <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cau2|ss24bit:inst|ss21bit:inst1
+E <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+a => inst5.IN0
+a => inst.IN0
+b => inst1.IN1
+b => inst4.IN0
+G => inst1.IN2
+G => inst.IN2
+G => inst3.IN1
+S <= inst.DB_MAX_OUTPUT_PORT_TYPE
+I <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cau2|ss24bit:inst|ss21bit:inst3
+E <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+a => inst5.IN0
+a => inst.IN0
+b => inst1.IN1
+b => inst4.IN0
+G => inst1.IN2
+G => inst.IN2
+G => inst3.IN1
+S <= inst.DB_MAX_OUTPUT_PORT_TYPE
+I <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,6 @@
+
+Xe may: 	XM1	1700
+Dong co: 	DC1	A	Honda	500
+Banh xe 1: 	BX11	D	Honda	400
+Banh xe 2: 	BX@@	E	HOnd	300
+Khung xe: 	KX1	Khung Nhom	Honda	500

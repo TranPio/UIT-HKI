@@ -1,0 +1,46 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+vector<int> findOccurrences(const string& S, const string& T) {
+    vector<int> occurrences;
+    int n = S.length();
+    int m = T.length();
+
+    // Tìm các vị trí xuất hiện của xâu T trong xâu S
+    for (int i = 0; i <= n - m; i++) {
+        bool found = true;
+        for (int j = 0; j < m; j++) {
+            if (S[i + j] != T[j]) {
+                found = false;
+                break;
+            }
+        }
+        if (found) {
+            occurrences.push_back(i + 1);  // Thêm vị trí xuất hiện vào danh sách
+        }
+    }
+    return occurrences;
+}
+
+int main() {
+    string S, T;
+    getline(cin, S);
+    getline(cin, T);
+
+    vector<int> occurrences = findOccurrences(S, T);
+    if (occurrences.empty()) {
+        cout << "NO" << endl;
+    } else {
+        cout << "YES" << endl;
+        for (int i = 0; i < occurrences.size(); i++) {
+            cout << occurrences[i];
+            if (i != occurrences.size() - 1) {
+                cout << " ";
+            }
+        }
+        cout << endl;
+    }
+
+    return 0;
+}

@@ -1,0 +1,123 @@
+#include <iostream>
+#include <string>
+#include "Sinhvien.h"
+using namespace std;
+void Sinhvien::nhap()
+{
+	cout << "Nhap ma so sinh vien: ";
+	getline(cin, MSSV);
+	cout << "Nhap ten sinh vien: ";
+	getline(cin, ten);
+	cout << "Nhap diem Toan: ";
+	cin >> T;
+	cout << "Nhap diem Van: ";
+	cin >> V;
+	cin.ignore();
+}
+
+float Sinhvien::DTB() 
+{
+	return (T+V)/2.0;
+}
+
+
+void Sinhvien::xuat() 
+{
+	cout << endl;
+	cout << "MSSV: " << MSSV << "|" << "Ten SV: " << ten << "|" << "Diem Toan: " << T << "|" << "Diem Van: " << V << "|" << "Diem TB: " << DTB();
+}
+
+void Lop::nhap()
+{
+	cout << "Nhap ma lop: ";
+	getline(cin, Malop);
+	cout << "Nhap ten lop: ";
+	getline(cin, Tenlop);
+	int n;
+	cout << "Nhap so luong sinh vien: ";
+	cin >> n;
+	cin.ignore();
+	for (int i = 0; i < n; i++) {
+		Sinhvien sv;
+		sv.nhap();
+		danhsachSV.push_back(sv);
+	}
+}
+
+void Lop::xuat()
+{
+	cout << "Danh sach sinh vien cua lop " << Tenlop << ":" << endl;
+	for (int i = 0; i < danhsachSV.size(); i++) {
+		danhsachSV[i].xuat();
+	}
+}
+
+
+void Truong::nhap()
+{
+	cout << "Nhap ten truong: ";
+	getline(cin, tenTruong);
+	int n;
+	cout << "Nhap so luong lop: ";
+	cin >> n;
+	cin.ignore();
+	for (int i = 0; i < n; i++) {
+		Lop lop;
+		lop.nhap();
+		danhsachLop.push_back(lop);
+	}
+}
+
+void Truong::xuat()
+{
+	cout << "Truong " << tenTruong << ":" << endl;
+	for (int i = 0; i < danhsachLop.size(); i++) {
+		danhsachLop[i].xuat();
+	}
+}
+
+void Truong::thongkeSinhvienDTB_lonhon5()
+{
+	int dem = 0;
+	cout << "Danh sach sinh vien co diem trung binh lon hon 5: " << endl;
+	for (int i = 0; i < danhsachLop.size(); i++) {
+		for (int j = 0; j < danhsachLop[i].danhsachSV.size(); j++) {
+			if (danhsachLop[i].danhsachSV[j].DTB() > 5) {
+				danhsachLop[i].danhsachSV[j].xuat();
+				dem++;
+				if (dem ==5) {
+					break;
+				}
+			}
+		}
+	}
+}
+
+
+void Truong::thongkediemcaonhatTruong()
+{
+	float diemcaoI = 0;
+	int dem = 0;
+	cout << "Danh sach sinh vien co diem cao nhat truong: " << endl;
+	for (int i = 0; i < danhsachLop.size(); i++) {
+		for (int j = 0; j < danhsachLop[i].danhsachSV.size(); j++) {
+			if (danhsachLop[i].danhsachSV[j].DTB() > diemcaoI) {
+				diemcaoI = danhsachLop[i].danhsachSV[j].DTB();
+
+			}
+		}
+	}
+	for (int i = 0; i < danhsachLop.size(); i++) {
+		for (int j = 0; j < danhsachLop[i].danhsachSV.size(); j++) {
+			if (danhsachLop[i].danhsachSV[j].DTB() == diemcaoI) {
+				danhsachLop[i].danhsachSV[j].xuat();
+				dem++;
+				if (dem == 5) {
+					break;
+				}
+				
+		
+			}
+		}
+	}
+}

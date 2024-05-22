@@ -1,0 +1,5 @@
+﻿  MAIN.cpp
+C:\Thuc hanh tin\phanso\phanso\MAIN.cpp(7,18): warning C4930: 'phan_so e(void)': prototyped function not called (was a variable definition intended?)
+  PHANSO.cpp
+  Generating Code...
+  phanso.vcxproj -> C:\Thuc hanh tin\phanso\x64\Debug\phanso.exe

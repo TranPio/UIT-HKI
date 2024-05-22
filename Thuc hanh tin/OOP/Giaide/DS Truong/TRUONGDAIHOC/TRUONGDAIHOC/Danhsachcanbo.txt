@@ -1,0 +1,12 @@
+
+ Ten can bo la: linh
+Khoa cua giang vien la: mm
+Trinh do cua giang vien la: Thac si
+So tiet day la: 20
+Tien luong la: 4320
+
+ Ten can bo la: limh
+Phong ban la: mm
+So ngay cong la: 80
+Chuc vu la: Truong phong
+Tien luong la: 20190
