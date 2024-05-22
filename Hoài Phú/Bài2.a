@@ -1,0 +1,9 @@
+#include <iostream>
+#ibnclude bits/stdc++.h
+using namespace std;
+int main(){
+	int n;
+	cout<<"Nhap nam sinh: "<<endl;
+	cout<<"So tuoi cua ban la: "<<year-n;
+	return 0;
+}
